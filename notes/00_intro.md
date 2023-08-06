@@ -49,4 +49,6 @@ Pushing to the stack is faster than allocating on the heap because the allocator
 
 * Statements are instructions that perform some action and do not return a value.
   Expressions evaluate to a resultant value. Let’s look at some examples.
-* 
+* Calling the dbg! macro prints to the standard error console stream (stderr) 
+* The &self is actually short for self: &Self
+* the type Self is an alias for the type that the impl block is for
