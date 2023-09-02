@@ -13,6 +13,18 @@ cargo build --release
 cargo update
 cargo doc --open
 
+# run all tests
+cargo test
+# run all tests parallel with N number of threads
+cargo test -- --test-threads=1
+# displaying stdout 
+cargo test -- --show-output
+# run all tests which have the passed string
+cargo test _MY_TEST_
+# run all ignored tests
+cargo test -- --ignored
+# run all integrations tests matches `integration_test` 
+cargo test --test integration_test
 ```
 
 ## Ownership
