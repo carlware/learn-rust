@@ -29,7 +29,8 @@ cargo test --test integration_test
 # commands in workspaces
 cargo run -p adder 
 cargo new --lib add_one
-cargo test -p add_one 
+cargo test -p add_one
+cargo install ripgrep 
 ```
 
 ## Ownership
