@@ -103,11 +103,11 @@ mod tests_printing {
         assert_eq!(10, value);
     }
 
-    // #[test]
-    // fn this_test_will_fail() {
-    //     let value = prints_and_returns_10(8);
-    //     assert_eq!(5, value);
-    // }
+    #[test]
+    fn this_test_will_fail() {
+        let value = prints_and_returns_10(8);
+        assert_ne!(5, value);
+    }
 }
 
 pub fn add_two(a: i32) -> i32 {
