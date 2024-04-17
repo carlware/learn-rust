@@ -9,13 +9,6 @@ pub struct ThreadPool {
 type Job = Box<dyn FnOnce() + Send + 'static>;
 
 impl ThreadPool {
-    /// Create a new ThreadPool.
-    ///
-    /// The size is the number of threads in the pool.
-    ///
-    /// # Panics
-    ///
-    /// The `new` function will panic if the size is zero.
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
         let mut threads = Vec::with_capacity(size);
@@ -27,10 +20,7 @@ impl ThreadPool {
             threads.push(Worker::new(id, Arc::clone(&receiver)));
         }
 
-        ThreadPool {
-            threads,
-            sender
-        }
+        ThreadPool { threads, sender }
     }
 
     pub fn execute<F>(&self, f: F)
@@ -54,6 +44,6 @@ impl Worker {
             println!("Worker {id} got a job; executing.");
             job();
         });
-        return Worker{id, thread}
+        Worker { id, thread }
     }
 }
